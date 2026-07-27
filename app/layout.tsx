@@ -5,9 +5,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import Problem from "@/components/Problem";
-import HowItWorks from "@/components/HowItWorks";
-import BeforAndAfter from "@/components/BeforAndAfter";
 import Services from "@/components/Services";
 import Reviews from "@/components/Reviews";
 
@@ -37,16 +34,13 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-      {children}
-      <Navbar />
-      <Hero />
-      <Problem />
-      <HowItWorks />
-      <BeforAndAfter />
-      <Services />
-      <Reviews />
-      <Footer />
-      <WhatsAppButton />
+          {children}
+          <Navbar />
+          <Hero />
+          <Services />
+          <Reviews />
+          <Footer />
+          <WhatsAppButton />
       </body>
     </html>
   );
