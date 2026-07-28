@@ -9,138 +9,84 @@ import {
 
 export default function Hero() {
     return (
-        <section
-            id="home"
-            className="min-h-screen items-center overflow-hidden "
-        >
-            {/* Background */}
-            
-            {/* Content */}
-            <div className="relative z-10 mx-auto w-full px-6 lg:px-8 bg-gradient-to-b from-[#5D8A78] to-[#1E5F74] py-5 lg:py-10">
+        <section>
+            <div id="home" className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 py-6 lg:grid-cols-2 lg:px-10"
+            >
+                {/* Texto */}
+                <div className="flex flex-col">
 
-                <div className="w-full">
-
-                    {/* Heading */}
-
-                    <h1 className="mt-8 text-5xl font-bold leading-tight text-white lg:text-7xl">
-
-                        Carpet Cleaning in Perth
-
+                    {/* Título */}
+                    <h1 className="text-5xl font-bold leading-tight text-gray-900 md:text-6xl lg:text-7xl">
+                        Professional
+                        <span className="block text-sky-500">
+                            Carpet Cleaning
+                        </span>
+                        in Perth
                     </h1>
 
-                    {/* Subtitle */}
-
-                    <p className="mt-8 text-lg leading-8 text-gray-200">
-
-                        Over time, carpets, upholstery, and leather surfaces build up dirt, dust, allergens, stains, and unwanted odours. These hidden contaminants can affect the freshness, comfort, and appearance of your home or workplace.
+                    {/* Descrição */}
+                    <p className="mt-8 max-w-xl text-lg leading-8 text-gray-600">
+                        Refresh your carpets, upholstery and leather with professional cleaning
+                        services that remove dirt, allergens and stains, leaving your home or
+                        business cleaner, healthier and looking its best.
                     </p>
 
-                    <p className="mt-8 text-lg leading-8 text-gray-200">
-                        A Cleaner Space Starts with the Right Cleaning Solution.
+                    {/* Google Rating */}
+                    <div className="mt-10 flex w-fit items-center gap-4 rounded-2xl border border-gray-200 bg-white px-5 py-4 shadow-lg">
 
-                        At Pro Cleanup Carpet Cleaning, we use advanced equipment and effective cleaning techniques to deliver outstanding results. Whether your home needs a deep refresh or your business requires reliable cleaning support, our team provides tailored cleaning solutions to help homeowners and businesses across Perth maintain cleaner, fresher, and more welcoming spaces.
-
-                    </p>
-
-                    {/* Buttons */}
-
-                    <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-
-                        {/* Google Badge */}
-                        <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-md">
-
-                            <StarIcon className="h-5 w-5 text-yellow-400" />
-
-                            <span className="text-sm text-white">
-                                5.0 Google Rating | Perth Homes & Businesses
+                        <div className="flex h-16 w-16 flex-col items-center justify-center rounded-xl bg-sky-50">
+                            <span className="text-xl font-bold text-gray-900">
+                                5.0
                             </span>
 
+                            <div className="mt-1 flex">
+                                {[...Array(5)].map((_, i) => (
+                                    <StarIcon
+                                        key={i}
+                                        className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400"
+                                    />
+                                ))}
+                            </div>
                         </div>
 
+                        <div>
+                            <p className="font-semibold text-gray-900">
+                                Google Reviews
+                            </p>
+
+                            <p className="text-sm text-gray-500">
+                                Trusted by homeowners & businesses
+                            </p>
+                        </div>
+
+                    </div>
+
+                    {/* CTA */}
+                    <div className="mt-10">
                         <a
                             href="#contact"
-                            className="
-                                        rounded-full
-                                        bg-[#1E5F74]
-                                        px-8
-                                        py-4
-                                        text-center
-                                        font-semibold
-                                        text-white
-                                        shadow-lg
-                                        transition-all
-                                        duration-300
-                                        hover:bg-[#164B5E]
-                                        hover:-translate-y-1
-                                        hover:shadow-2xl
-                                        "
+                            className="inline-flex items-center rounded-full bg-sky-500 px-8 py-4 font-semibold text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:bg-sky-600"
                         >
                             Get a Free Quote
                         </a>
-
-                        <a
-                            href="tel:+61000000000"
-                            className="
-                                        rounded-full
-                                        border
-                                        border-white/40
-                                        bg-white/10
-                                        px-8
-                                        py-4
-                                        text-center
-                                        font-semibold
-                                        text-white
-                                        backdrop-blur-md
-                                        transition-all
-                                        duration-300
-                                        hover:bg-white
-                                        hover:text-[#1E5F74]
-                                        "
-                        >
-                            Call Now
-                        </a>
-                    </div>
-
-                    {/* Features */}
-
-                    <div className="mb-5 mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
-
-                        <div className="flex items-center gap-3 rounded-xl bg-white/10 p-4 backdrop-blur-md">
-
-                            <SparklesIcon className="h-6 w-6 text-[#7CC6E8]" />
-
-                            <span className="text-white">
-                                Eco-Friendly
-                            </span>
-
-                        </div>
-
-                        <div className="flex items-center gap-3 rounded-xl bg-white/10 p-4 backdrop-blur-md">
-
-                            <ClockIcon className="h-6 w-6 text-[#7CC6E8]" />
-
-                            <span className="text-white">
-                                Fast Drying
-                            </span>
-
-                        </div>
-
-                        <div className="flex items-center gap-3 rounded-xl bg-white/10 p-4 backdrop-blur-md">
-
-                            <ShieldCheckIcon className="h-6 w-6 text-[#7CC6E8]" />
-
-                            <span className="text-white">
-                                Fully Insured
-                            </span>
-
-                        </div>
-
                     </div>
 
                 </div>
 
-            </div>
+                {/* Imagem */}
+                <div className="relative">
 
+                    {/* Fundo decorativo */}
+                    <div className="absolute -left-6 -top-6 h-full w-full rounded-[32px] bg-sky-100" />
+
+                    <img
+                        src="/images/hero-background.jpg"
+                        alt="Professional Carpet Cleaning"
+                        className="relative h-[600px] w-full rounded-[32px] object-cover shadow-2xl"
+                    />
+
+                </div>
+            </div>
         </section>
     );
 }

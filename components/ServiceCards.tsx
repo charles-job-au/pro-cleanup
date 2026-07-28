@@ -14,7 +14,7 @@ export default function ServiceCard({
 }: ServiceCardProps) {
     return (
         <FadeIn>
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <div className="h-full group bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
                 <div className="overflow-hidden">
                     <Image

@@ -2,12 +2,11 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "Services", href: "#services", current: false },
-  { name: "Commercial", href: "#commercial", current: false },
-  { name: "About", href: "#about", current: false },
-  { name: "Reviews", href: "#reviews", current: false },
-  { name: "Contact", href: "#contact", current: false },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Reviews", href: "#reviews" },
+  { name: "Contact", href: "#contact" },
 ];
 
 function classNames(...classes: string[]) {
@@ -18,75 +17,106 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#E7E5E4]"
+      className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-xl shadow-sm"
     >
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
         <div className="flex h-20 items-center justify-between">
 
           {/* Logo */}
-          <img
-            src="/images/logo.png"
-            alt="Pro Cleanup"
-            className="h-20 w-auto"
-          />
+          <a href="#home">
+            <img
+              src="/images/transparent-logo.png"
+              alt="Pro Cleanup"
+              className="h-30 w-auto"
+            />
+          </a>
 
-          {/* Desktop */}
-          <div className="hidden md:flex items-center gap-2">
+          {/* Desktop Menu */}
+          <div className="hidden items-center gap-1 md:flex">
 
             {navigation.map((item) => (
+
               <a
                 key={item.name}
                 href={item.href}
-                className={classNames(
-                  item.current
-                    ? "text-[#5D8A78] font-semibold"
-                    : "text-[#2F2F2F] hover:text-[#5D8A78] hover:bg-[#F8F6F2]",
-
-                  "rounded-lg px-4 py-2 text-sm transition-all duration-300"
-                )}
+                className="
+                group
+                relative
+                rounded-lg
+                px-4
+                py-2
+                text-sm
+                font-medium
+                text-gray-700
+                transition
+                hover:text-sky-600
+                "
               >
+
                 {item.name}
+
+                <span
+                  className="
+                  absolute
+                  bottom-0
+                  left-1/2
+                  h-0.5
+                  w-0
+                  -translate-x-1/2
+                  rounded-full
+                  bg-sky-500
+                  transition-all
+                  duration-300
+                  group-hover:w-1/2
+                  "
+                />
+
               </a>
+
             ))}
 
           </div>
 
-          {/* CTA */}
 
+          {/* CTA */}
           <div className="hidden md:block">
 
-            <button
+            <a
+              href="#contact"
               className="
+              inline-flex
               rounded-full
-              bg-[#5D8A78]
-              px-6
+              bg-sky-500
+              px-7
               py-3
               text-sm
               font-semibold
               text-white
+              shadow-lg
               transition-all
               duration-300
-              hover:bg-[#4B7263]
-              hover:-translate-y-0.5
-              hover:shadow-lg
+              hover:-translate-y-1
+              hover:bg-sky-600
+              hover:shadow-xl
               "
             >
-              Book Online
-            </button>
+              Get a Free Quote
+            </a>
 
           </div>
 
-          {/* Mobile */}
 
+          {/* Mobile Button */}
           <DisclosureButton
             className="
-            md:hidden
-            rounded-lg
+            rounded-xl
             p-2
-            text-[#2F2F2F]
-            hover:bg-[#F8F6F2]
-            hover:text-[#5D8A78]
+            text-gray-700
             transition
+            hover:bg-gray-100
+            md:hidden
             "
           >
             <Bars3Icon className="block h-7 w-7 group-data-open:hidden" />
@@ -94,13 +124,14 @@ export default function Navbar() {
           </DisclosureButton>
 
         </div>
+
       </div>
 
+
       {/* Mobile Menu */}
+      <DisclosurePanel className="border-t border-gray-100 bg-white md:hidden">
 
-      <DisclosurePanel className="md:hidden bg-white border-t border-[#E7E5E4]">
-
-        <div className="space-y-2 px-5 py-5">
+        <div className="space-y-2 px-6 py-6">
 
           {navigation.map((item) => (
 
@@ -108,39 +139,47 @@ export default function Navbar() {
               key={item.name}
               as="a"
               href={item.href}
-              className={classNames(
-                item.current
-                  ? "bg-[#5D8A78] text-white"
-                  : "text-[#2F2F2F] hover:bg-[#F8F6F2] hover:text-[#5D8A78]",
-
-                "block rounded-lg px-4 py-3 text-base transition-all duration-300"
-              )}
+              className="
+              block
+              rounded-xl
+              px-4
+              py-3
+              font-medium
+              text-gray-700
+              transition
+              hover:bg-sky-50
+              hover:text-sky-600
+              "
             >
               {item.name}
             </DisclosureButton>
 
           ))}
 
-          <button
+
+          <DisclosureButton
+            as="a"
+            href="#contact"
             className="
             mt-4
-            w-full
+            block
             rounded-full
-            bg-[#5D8A78]
+            bg-sky-500
             py-3
+            text-center
             font-semibold
             text-white
-            hover:bg-[#4B7263]
-            transition-all
-            duration-300
+            transition
+            hover:bg-sky-600
             "
           >
-            Book Online
-          </button>
+            Get a Free Quote
+          </DisclosureButton>
 
         </div>
 
       </DisclosurePanel>
+
     </Disclosure>
   );
 }
