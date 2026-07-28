@@ -48,11 +48,8 @@ export default function Reviews() {
                 </h2>
             </div>
 
-
-flex h-full min-h-[320px] flex-col 
-
             {/* Reviews */}
-            <div className=" px-6 grid gap-6 md:grid-cols-2 lg:px-12">
+            <div className="px-6 grid gap-6 md:grid-cols-2 lg:px-12">
                 {reviews.map((review) => (
                     <div
                         key={review.name}
